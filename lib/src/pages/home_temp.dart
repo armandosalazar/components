@@ -5,20 +5,20 @@ class HomePageTemp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        color: Colors.green,
-        padding: const EdgeInsets.all(20.0),
-        margin: const EdgeInsets.all(10.0),
-        height: 80,
-        width: MediaQuery.of(context).size.width,
-        alignment: Alignment.center,
-        child: const Text('Luis', style: TextStyle(
-          backgroundColor: Colors.lightGreen,
-          color: Colors.white,
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Componentes temp'),
+      ),
+      body: ListView(
+        children:  const <Widget>[
+          ListTile(
+            title: Text('Alertas'),
+          ),
+          Divider(),
+          ListTile(
+            title: Text('Alertas'),
+          ),
+        ],
       ),
     );
   }
