@@ -1,3 +1,4 @@
+import 'package:componentes/src/pages/alert_page.dart';
 import 'package:componentes/src/providers/menu_provider.dart';
 import 'package:componentes/src/utils/icon_string_util.dart';
 import 'package:flutter/material.dart';
@@ -39,14 +40,14 @@ class HomePage extends StatelessWidget {
         // print(snapshot);
         // print(snapshot.data);
         return ListView(
-          children: _listItems(snapshot.data),
+          children: _listItems(snapshot.data, context),
         );
       },
     );
   }
 
   // Operador de null ?
-  List<Widget> _listItems(List<dynamic>? data) {
+  List<Widget> _listItems(List<dynamic>? data, BuildContext context) {
     final List<Widget> options = [];
 
     data?.forEach((element) {
@@ -60,6 +61,8 @@ class HomePage extends StatelessWidget {
           ),
           onTap: () {
             print('Tap');
+            final route = MaterialPageRoute(builder: (context) => AlertPage());
+            Navigator.push(context, route);
           },
         ))
         ..add(const Divider());
