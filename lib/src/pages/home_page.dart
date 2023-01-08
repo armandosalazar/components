@@ -1,3 +1,4 @@
+import 'package:componentes/src/providers/menu_provider.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,6 +15,9 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _list() {
+    // Llamando a menuProvider
+    // Esto se disparara solamente una vez si no usamos hot restart
+    print(menuProvider.options);
     return ListView(
       children: _listItems(),
     );
