@@ -1,3 +1,4 @@
+import 'package:componentes/src/pages/page_404.dart';
 import 'package:componentes/src/pages/alert_page.dart';
 import 'package:componentes/src/pages/avatar_page.dart';
 import 'package:componentes/src/pages/home_page.dart';
@@ -23,6 +24,10 @@ class MyApp extends StatelessWidget {
         '/': (BuildContext context) => HomePage(),
         '/alert': (BuildContext context) => AlertPage(),
         'avatar': (BuildContext context) => AvatarPage(),
+      },
+      onGenerateRoute: (settings) {
+        print('Called route: ${settings.name}');
+        return MaterialPageRoute(builder: (context) => Page404(route: settings.name,));
       },
     );
   }
