@@ -2,7 +2,7 @@
     "nombreApp" : "Componentes",
     "rutas" : [
         {
-            "ruta" : "alert",
+            "ruta" : "/alert",
             "icon" : "add_alert",
             "texto": "Alertas"
         },

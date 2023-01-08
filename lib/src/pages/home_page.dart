@@ -61,8 +61,9 @@ class HomePage extends StatelessWidget {
           ),
           onTap: () {
             print('Tap');
-            final route = MaterialPageRoute(builder: (context) => AlertPage());
-            Navigator.push(context, route);
+            // final route = MaterialPageRoute(builder: (context) => AlertPage());
+            // Navigator.push(context, route);
+          Navigator.pushNamed(context, element['ruta']);
           },
         ))
         ..add(const Divider());
