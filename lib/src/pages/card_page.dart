@@ -24,6 +24,19 @@ class CardPage extends StatelessWidget {
         padding: EdgeInsets.all(15.0),
         children: <Widget>[
           _cardTypeOne(),
+          SizedBox(height: 15.0),
+          _cardTypeTwo(),
+          SizedBox(height: 15.0),
+          _cardTypeOne(),
+          SizedBox(height: 15.0),
+          _cardTypeTwo(),
+          SizedBox(height: 15.0),
+          _cardTypeOne(),
+          SizedBox(height: 15.0),
+          _cardTypeTwo(),
+          SizedBox(height: 15.0),
+          _cardTypeOne(),
+          SizedBox(height: 15.0),
           _cardTypeTwo(),
         ],
       ),
@@ -75,17 +88,17 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTypeTwo() {
-    return Card(
+    final card = Container(
       // Hace que la nada se salga del rededor de la tarjeta
-      clipBehavior: Clip.antiAlias,
+      // clipBehavior: Clip.antiAlias,
       child: Column(
         children: [
           FadeInImage(
             placeholder: AssetImage('assets/jar-loading.gif'),
             image:
                 NetworkImage('https://images4.alphacoders.com/975/97548.jpg'),
-            height: 250.0,
-            fit: BoxFit.cover,
+            height: 254.0,
+            fit: BoxFit.contain,
             fadeInDuration: Duration(milliseconds: 200),
           ),
           // Image(
@@ -93,10 +106,32 @@ class CardPage extends StatelessWidget {
           //       NetworkImage('https://images4.alphacoders.com/975/97548.jpg'),
           // ),
           Container(
-            child: Text('Description of image'),
+            child: Text(
+              'Description of image',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             padding: EdgeInsets.all(10.0),
           )
         ],
+      ),
+    );
+
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30.0),
+          color: Colors.white,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+                color: Colors.black26,
+                blurRadius: 10.0,
+                spreadRadius: 2.0,
+                offset: Offset(2.0, 5.0))
+          ]),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: card,
       ),
     );
   }
