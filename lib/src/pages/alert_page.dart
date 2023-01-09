@@ -9,6 +9,18 @@ class AlertPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Alertas'),
       ),
+      body: Center(
+        // child: RaisedButton(
+        //   onPressed: () {},
+        //   child: Text('Enter'),
+        // ),
+        // RaisedButton ya no funciona
+        // https://docs.flutter.dev/release/breaking-changes/buttons
+        child: ElevatedButton(
+          onPressed: () {},
+          child: Text('Show Alert'),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pop(context);
