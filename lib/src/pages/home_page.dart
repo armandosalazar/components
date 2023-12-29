@@ -13,6 +13,15 @@ class HomePage extends StatelessWidget {
         title: const Text('Components'),
       ),
       body: _list(),
+      drawer: _drawer(context),
+    );
+  }
+
+  Widget _drawer(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: const [DrawerHeader(child: Text('Drawer Header'))],
+      ),
     );
   }
 

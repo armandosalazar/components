@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       // redundante
       initialRoute: '/',
       routes: getApplicationRoutes(),
-      onGenerateRoute: (settings) {
+      onGenerateRoute: (RouteSettings settings) {
         if (kDebugMode) print('Called route: ${settings.name}');
         return MaterialPageRoute(
           builder: (context) => NotFound(
