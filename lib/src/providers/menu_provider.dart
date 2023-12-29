@@ -3,22 +3,18 @@ import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 
 class _MenuProvider {
-  List<dynamic> options = [];
 
-  _MenuProvider() {
-    // loadData();
-  }
-
-  // Corregimos esto para utilizar un Future Builder
   Future<List<dynamic>> loadData() async {
-    // Aquí se regresa un future
-    final data = await rootBundle.loadString('data/menu_opts.json');
-    Map dataMap = json.decode(data);
-    // print(data);
+    final dataRaw = await rootBundle
+        .loadString('data/menu_opts.json'); // Row data from json
+
+    Map<String, dynamic> dataMap = json.decode(dataRaw); // Convert in to map
+    // if (kDebugMode) print('raw 💗: $dataRaw 💗');
+    // if (kDebugMode) print('map 💗: $dataMap 💗');
     // print(dataMap);
     // print(dataMap['nombreApp']);
-    options = dataMap['rutas'];
-    return options;
+
+    return dataMap['routes']; // return list of maps
   }
 }
 

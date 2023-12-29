@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class HomePageTemp extends StatelessWidget {
@@ -42,7 +43,7 @@ class HomePageTemp extends StatelessWidget {
                   leading: const Icon(Icons.account_balance_wallet),
                   trailing: const Icon(Icons.keyboard_arrow_right),
                   onTap: () {
-                    print('Tap');
+                    if (kDebugMode) print('Tap');
                   },
                 ),
                 const Divider()

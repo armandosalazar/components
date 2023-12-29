@@ -1,5 +1,6 @@
+import 'package:components/src/pages/not_found.dart';
 import 'package:components/src/routes/routes.dart' show getApplicationRoutes;
-import 'package:components/src/pages/page_404.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 // mis paquetes al final
@@ -22,9 +23,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: getApplicationRoutes(),
       onGenerateRoute: (settings) {
-        print('Called route: ${settings.name}');
+        if (kDebugMode) print('Called route: ${settings.name}');
         return MaterialPageRoute(
-          builder: (context) => Page404(
+          builder: (context) => NotFound(
             route: settings.name,
           ),
         );

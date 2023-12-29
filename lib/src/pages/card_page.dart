@@ -88,34 +88,32 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTypeTwo() {
-    final card = Container(
+    final card = Column(
       // Hace que la nada se salga del rededor de la tarjeta
       // clipBehavior: Clip.antiAlias,
-      child: Column(
-        children: [
-          const FadeInImage(
-            placeholder: AssetImage('assets/jar-loading.gif'),
-            image:
-                NetworkImage('https://images4.alphacoders.com/975/97548.jpg'),
-            height: 254.0,
-            fit: BoxFit.contain,
-            fadeInDuration: Duration(milliseconds: 200),
-          ),
-          // Image(
-          //   image:
-          //       NetworkImage('https://images4.alphacoders.com/975/97548.jpg'),
-          // ),
-          Container(
-            padding: const EdgeInsets.all(10.0),
-            child: const Text(
-              'Description of image',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+      children: [
+        const FadeInImage(
+          placeholder: AssetImage('assets/jar-loading.gif'),
+          image:
+              NetworkImage('https://images4.alphacoders.com/975/97548.jpg'),
+          height: 254.0,
+          fit: BoxFit.contain,
+          fadeInDuration: Duration(milliseconds: 200),
+        ),
+        // Image(
+        //   image:
+        //       NetworkImage('https://images4.alphacoders.com/975/97548.jpg'),
+        // ),
+        Container(
+          padding: const EdgeInsets.all(10.0),
+          child: const Text(
+            'Description of image',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ],
     );
 
     return Container(

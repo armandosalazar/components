@@ -1,5 +1,6 @@
 import 'package:components/src/providers/menu_provider.dart';
 import 'package:components/src/utils/icon_string_util.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,7 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Componentes'),
+        title: const Text('Components'),
       ),
       body: _list(),
     );
@@ -34,12 +35,10 @@ class HomePage extends StatelessWidget {
     return FutureBuilder(
       future: menuProvider.loadData(),
       initialData: const [],
-      builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
-        // print('builder');
-        // print(snapshot);
-        // print(snapshot.data);
+      builder: (BuildContext context, AsyncSnapshot<List<dynamic>> builder) {
+        if (kDebugMode) print('${builder.data}');
         return ListView(
-          children: _listItems(snapshot.data, context),
+          children: _listItems(builder.data, context),
         );
       },
     );
@@ -52,18 +51,18 @@ class HomePage extends StatelessWidget {
     data?.forEach((element) {
       options
         ..add(ListTile(
-          title: Text(element['texto']),
-          leading: getIcon(element['icon']),
-          trailing: const Icon(
-            Icons.keyboard_arrow_right,
-            color: Colors.blue,
-          ),
-          onTap: () {
-            print('Tap');
-            // final route = MaterialPageRoute(builder: (context) => AlertPage());
-            // Navigator.push(context, route);
-          Navigator.pushNamed(context, element['ruta']);
-          },
+            title: Text(element['text']!),
+            leading: getIcon(element['icon']!),
+            trailing: const Icon(
+              Icons.keyboard_arrow_right,
+              color: Colors.blue,
+            ),
+            onTap: () {
+              if (kDebugMode) print('Tap');
+              // final route = MaterialPageRoute(builder: (context) => AlertPage());
+              // Navigator.push(context, route);
+              Navigator.pushNamed(context, element['route']!);
+            },
           ),
         )
         ..add(const Divider());
