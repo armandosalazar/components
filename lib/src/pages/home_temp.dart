@@ -18,19 +18,19 @@ class HomePageTemp extends StatelessWidget {
     );
   }
 
-  List<Widget> _createItems() {
-    List<Widget> list = <Widget>[];
-    for (var option in options) {
-      var listTile = ListTile(title: Text(option));
-      // list.add(listTile);
-      // list.add(const Divider());
-      // Esto se puede hacer de otra forma con el operador de cascada:
-      list
-        ..add(listTile)
-        ..add(const Divider());
-    }
-    return list;
-  }
+  // List<Widget> _createItems() {
+  //   List<Widget> list = <Widget>[];
+  //   for (var option in options) {
+  //     var listTile = ListTile(title: Text(option));
+  //     // list.add(listTile);
+  //     // list.add(const Divider());
+  //     // Esto se puede hacer de otra forma con el operador de cascada:
+  //     list
+  //       ..add(listTile)
+  //       ..add(const Divider());
+  //   }
+  //   return list;
+  // }
 
   List<Widget> _createItemsShort() {
     return options

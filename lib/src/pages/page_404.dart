@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
 class Page404 extends StatelessWidget {
-  final route;
+  final String? route;
 
-  Page404({Key? key, String? this.route}) : super(key: key);
+  const Page404({Key? key, this.route}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('404'),
+          title: const Text('404'),
           centerTitle: true,
         ),
         body: Center(
           child: Text(
-            'Route /${this.route} Not Found',
-            style: TextStyle(
+            'Route /$route Not Found',
+            style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
               fontFamily: "monospace",

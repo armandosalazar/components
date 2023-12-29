@@ -1,30 +1,32 @@
 import 'package:flutter/material.dart';
 
 class AvatarPage extends StatelessWidget {
+  const AvatarPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Avatars'),
+        title: const Text('Avatars'),
         actions: [
           Container(
-            margin: EdgeInsets.only(right: 5.0),
-            child: CircleAvatar(
+            margin: const EdgeInsets.only(right: 5.0),
+            child: const CircleAvatar(
               backgroundImage: NetworkImage(
                   'https://static-cse.canva.com/blob/975731/1600w-z_r_KC1WlmU.jpg'),
             ),
           ),
           Container(
-            margin: EdgeInsets.only(right: 5.0),
-            child: CircleAvatar(
-              child: Text('MN'),
+            margin: const EdgeInsets.only(right: 5.0),
+            child: const CircleAvatar(
               backgroundColor: Colors.pinkAccent,
               foregroundColor: Colors.white,
+              child: Text('MN'),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
+          const Padding(
+            padding: EdgeInsets.only(
               right: 5.0,
             ),
             child: CircleAvatar(
@@ -33,7 +35,7 @@ class AvatarPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
+      body: const Center(
         child: FadeInImage(
           placeholder: AssetImage('assets/jar-loading.gif'),
           image: NetworkImage(

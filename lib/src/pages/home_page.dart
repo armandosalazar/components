@@ -1,16 +1,15 @@
-import 'package:componentes/src/pages/alert_page.dart';
-import 'package:componentes/src/providers/menu_provider.dart';
-import 'package:componentes/src/utils/icon_string_util.dart';
+import 'package:components/src/providers/menu_provider.dart';
+import 'package:components/src/utils/icon_string_util.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Componentes'),
+        title: const Text('Componentes'),
       ),
       body: _list(),
     );
@@ -34,7 +33,7 @@ class HomePage extends StatelessWidget {
     // Usaremos aquí el Future Builder
     return FutureBuilder(
       future: menuProvider.loadData(),
-      initialData: [],
+      initialData: const [],
       builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
         // print('builder');
         // print(snapshot);
@@ -65,7 +64,8 @@ class HomePage extends StatelessWidget {
             // Navigator.push(context, route);
           Navigator.pushNamed(context, element['ruta']);
           },
-        ))
+          ),
+        )
         ..add(const Divider());
     });
 

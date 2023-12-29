@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CardPage extends StatelessWidget {
-  CardPage({Key? key}) : super(key: key);
+  const CardPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Column(
+        title: const Column(
           children: [
             Text('Card Page'),
             Text(
@@ -21,22 +21,22 @@ class CardPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: ListView(
-        padding: EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(15.0),
         children: <Widget>[
           _cardTypeOne(),
-          SizedBox(height: 15.0),
+          const SizedBox(height: 15.0),
           _cardTypeTwo(),
-          SizedBox(height: 15.0),
+          const SizedBox(height: 15.0),
           _cardTypeOne(),
-          SizedBox(height: 15.0),
+          const SizedBox(height: 15.0),
           _cardTypeTwo(),
-          SizedBox(height: 15.0),
+          const SizedBox(height: 15.0),
           _cardTypeOne(),
-          SizedBox(height: 15.0),
+          const SizedBox(height: 15.0),
           _cardTypeTwo(),
-          SizedBox(height: 15.0),
+          const SizedBox(height: 15.0),
           _cardTypeOne(),
-          SizedBox(height: 15.0),
+          const SizedBox(height: 15.0),
           _cardTypeTwo(),
         ],
       ),
@@ -51,10 +51,10 @@ class CardPage extends StatelessWidget {
       ),
       child: Padding(
         // padding: EdgeInsets.all(10.0),
-        padding: EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
+        padding: const EdgeInsets.only(left: 10.0, top: 20.0, right: 10.0),
         child: Column(
           children: [
-            ListTile(
+            const ListTile(
               title: Text('Title of Card'),
               subtitle: Text(
                   'Subtitle of card, with different content to learn, and get knowledge'),
@@ -73,11 +73,11 @@ class CardPage extends StatelessWidget {
                 // ),
                 TextButton(
                   onPressed: () {},
-                  child: Text('Cancel'),
+                  child: const Text('Cancel'),
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: Text('Ok'),
+                  child: const Text('Ok'),
                 ),
               ],
             )
@@ -93,7 +93,7 @@ class CardPage extends StatelessWidget {
       // clipBehavior: Clip.antiAlias,
       child: Column(
         children: [
-          FadeInImage(
+          const FadeInImage(
             placeholder: AssetImage('assets/jar-loading.gif'),
             image:
                 NetworkImage('https://images4.alphacoders.com/975/97548.jpg'),
@@ -106,13 +106,13 @@ class CardPage extends StatelessWidget {
           //       NetworkImage('https://images4.alphacoders.com/975/97548.jpg'),
           // ),
           Container(
-            child: Text(
+            padding: const EdgeInsets.all(10.0),
+            child: const Text(
               'Description of image',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),
             ),
-            padding: EdgeInsets.all(10.0),
           )
         ],
       ),
@@ -122,7 +122,7 @@ class CardPage extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30.0),
           color: Colors.white,
-          boxShadow: <BoxShadow>[
+          boxShadow: const <BoxShadow>[
             BoxShadow(
                 color: Colors.black26,
                 blurRadius: 10.0,

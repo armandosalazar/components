@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AlertPage extends StatelessWidget {
-  AlertPage({Key? key}) : super(key: key);
+  const AlertPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Alertas'),
+        title: const Text('Alertas'),
       ),
       body: Center(
         // child: RaisedButton(
@@ -18,18 +18,18 @@ class AlertPage extends StatelessWidget {
         // https://docs.flutter.dev/release/breaking-changes/buttons
         child: ElevatedButton(
           onPressed: () => _showAlert(context),
-          child: Text('Show Alert'),
           // Nueva forma de redondear los botones
           style: ElevatedButton.styleFrom(
-            shape: StadiumBorder(),
+            shape: const StadiumBorder(),
           ),
+          child: const Text('Show Alert'),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pop(context);
         },
-        child: Icon(Icons.keyboard_backspace),
+        child: const Icon(Icons.keyboard_backspace),
       ),
     );
   }
@@ -43,12 +43,12 @@ class AlertPage extends StatelessWidget {
         return AlertDialog(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-          title: Text('Title'),
-          content: Column(
+          title: const Text('Title'),
+          content: const Column(
             // Para que la columna no se estire por completo y solo tome el mínimo
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Content of alert defined by Armando Salzar'),
+              Text('Content of alert defined by Armando Salazar'),
               FlutterLogo(
                 size: 70.0,
               )
@@ -57,11 +57,11 @@ class AlertPage extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text('Ok'),
+              child: const Text('Ok'),
             )
           ],
         );
