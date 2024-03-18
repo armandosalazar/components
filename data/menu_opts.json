@@ -1,25 +1,30 @@
 {
-    "app_name": "Components",
-    "routes": [
-        {
-            "route": "/alert",
-            "icon" : "add_alert",
-            "text": "Alerts"
-        },
-        {
-            "route": "/avatar",
-            "icon" : "accessibility",
-            "text": "Avatars"
-        },
-        {
-            "route": "/card",
-            "icon" : "folder_open",
-            "text": "Cards"
-        },
-        {
-            "route": "/not-exist",
-            "icon": "warning",
-            "text": "Not Found"
-        }
-    ]
+  "app_name": "Components",
+  "routes": [
+    {
+      "route": "/alert",
+      "icon": "add_alert",
+      "text": "Alerts"
+    },
+    {
+      "route": "/avatar",
+      "icon": "accessibility",
+      "text": "Avatars"
+    },
+    {
+      "route": "/card",
+      "icon": "folder_open",
+      "text": "Cards"
+    },
+    {
+      "route": "/not-exist",
+      "icon": "warning",
+      "text": "Not Found"
+    },
+    {
+      "route": "/dashboard",
+      "icon": "accessibility",
+      "text": "Dashboard"
+    }
+  ]
 }
