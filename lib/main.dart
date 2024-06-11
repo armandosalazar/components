@@ -1,6 +1,14 @@
+import 'package:components/pages/alert_page.dart';
+import 'package:components/pages/avatar_page.dart';
+import 'package:components/pages/bloc_pattern_page.dart';
+import 'package:components/pages/card_page.dart';
+import 'package:components/pages/dashboard_page.dart';
+import 'package:components/pages/home_page.dart';
 import 'package:components/presentation/blocs.dart';
+import 'package:components/presentation/screens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 void main() => runApp(const BlocsProvider());
 
@@ -28,24 +36,42 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Components',
+      debugShowCheckedModeBanner: false,
+      routerConfig: GoRouter(
+        initialLocation: '/',
+        routes: [
+          GoRoute(
+            path: '/',
+            builder: (context, state) => const HomePage(),
+          ),
+          GoRoute(
+            path: '/alert',
+            builder: (context, state) => const AlertPage(),
+          ),
+          GoRoute(
+            path: '/avatar',
+            builder: (context, state) => const AvatarPage(),
+          ),
+          GoRoute(
+            path: '/card',
+            builder: (context, state) => const CardPage(),
+          ),
+          GoRoute(
+            path: '/dashboard',
+            builder: (context, state) => const DashboardPage(),
+          ),
+          GoRoute(
+            path: '/bloc-pattern',
+            builder: (context, state) => const BlocPatternPage(),
+            routes: [
+              GoRoute(
+                path: 'simple-cubit',
+                builder: (context, state) => const SimpleCubitPage(),
+              ),
+            ],
+          ),
+        ],
+      ),
     );
-    // return MaterialApp(
-    //   title: 'Material App',
-    //   debugShowCheckedModeBanner: false,
-    //   // home: HomePageTemp(),
-    //   // home: HomePage(),
-    //   // Al colocar las rutas así, se debe comentar el home, para que no sea
-    //   // redundante
-    //   initialRoute: '/',
-    //   routes: getApplicationRoutes(),
-    //   onGenerateRoute: (RouteSettings settings) {
-    //     if (kDebugMode) print('Called route: ${settings.name}');
-    //     return MaterialPageRoute(
-    //       builder: (context) => NotFound(
-    //         route: settings.name,
-    //       ),
-    //     );
-    //   },
-    // );
   }
 }

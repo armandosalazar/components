@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class AlertPage extends StatelessWidget {
   const AlertPage({Key? key}) : super(key: key);
@@ -27,7 +28,8 @@ class AlertPage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pop(context);
+          // Navigator.pop(context);
+          context.pop();
         },
         child: const Icon(Icons.keyboard_backspace),
       ),

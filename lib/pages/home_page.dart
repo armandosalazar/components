@@ -2,6 +2,7 @@ import 'package:components/providers/menu_provider.dart';
 import 'package:components/utils/icon_string_util.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -59,7 +60,8 @@ class HomePage extends StatelessWidget {
 
     data?.forEach((element) {
       options
-        ..add(ListTile(
+        ..add(
+          ListTile(
             title: Text(element['text']!),
             leading: getIcon(element['icon']!),
             trailing: const Icon(
@@ -67,10 +69,11 @@ class HomePage extends StatelessWidget {
               color: Colors.blue,
             ),
             onTap: () {
-              if (kDebugMode) print('Tap');
+              if (kDebugMode) print('Tap_on: ${element['route']}');
               // final route = MaterialPageRoute(builder: (context) => AlertPage());
               // Navigator.push(context, route);
-              Navigator.pushNamed(context, element['route']!);
+              // Navigator.pushNamed(context, element['route']!);
+              context.push(element['route']!);
             },
           ),
         )

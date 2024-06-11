@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BlocPatternPage extends StatelessWidget {
   const BlocPatternPage({super.key});
@@ -16,10 +17,11 @@ class BlocPatternPage extends StatelessWidget {
               const Divider(),
               ListTile(
                 title: const Text('Simple cubit'),
-                onTap: () => Navigator.pushNamed(
-                  context,
-                  "/bloc-pattern/simple-cubit",
-                ),
+                // onTap: () => Navigator.pushNamed(
+                //   context,
+                //   "/bloc-pattern/simple-cubit",
+                // ),
+                onTap: () => context.push('/bloc-pattern/simple-cubit'),
               ),
               const Divider(),
             ],
