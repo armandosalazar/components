@@ -1,5 +1,5 @@
-import 'package:components/src/providers/menu_provider.dart';
-import 'package:components/src/utils/icon_string_util.dart';
+import 'package:components/providers/menu_provider.dart';
+import 'package:components/utils/icon_string_util.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
