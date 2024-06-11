@@ -25,6 +25,11 @@
       "route": "/dashboard",
       "icon": "accessibility",
       "text": "Dashboard"
+    },
+    {
+      "route": "/bloc-pattern",
+      "icon": "folder_open",
+      "text": "Bloc Pattern"
     }
   ]
 }
